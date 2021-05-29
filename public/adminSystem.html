@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+
+<html ng-app="adminSystem" lang="en">
+
+<head>
+
+    <title>Ruta - Admin system</title>
+
+<!--    <base href="/">-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/x-icon" href="images/lock.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+          crossorigin="anonymous"
+          rel="stylesheet" >
+
+    <style>
+        html{
+            overflow-y:scroll;
+            height: 100%;
+        }
+        body{
+            /*<a href='https://pngtree.com/so/doodle-clipart'>doodle clipart png from pngtree.com</a>*/
+            background-image: url('images/foodBackground.png');
+            background-size: 475px;
+            height: 100%;
+        }
+    </style>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
+    <script src="js/controllers/adminSystemController.js"></script>
+
+</head>
+
+<body ng-controller="adminSystemController">
+
+<div class="container-fluid">
+
+    <!-- Row 0 -->
+    <div class="row bg-secondary">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="#dashboard">Dashboard</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#stock">Stock<span class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#orders">Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#customers">Customers</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col d-flex justify-content-end">
+                <button type="submit" class="btn btn-dark m-2" ng-Click="signOut()">Sign out</button>
+            </div>
+        </nav>
+    </div>
+
+    <div class="row">
+    <div ng-view>
+
+    </div>
+    </div>
+</div>
+
+</body>
+</html>

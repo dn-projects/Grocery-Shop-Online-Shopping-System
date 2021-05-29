@@ -1,0 +1,16 @@
+{
+  "name": "online-grocery-shopping-system",
+  "version": "0.0.1",
+  "description": "Online grocery shopping system",
+  "main": "server.js",
+  "author": "David Novikovas",
+  "dependencies": {
+    "angular-route": "^1.8.2",
+    "body-parser": "^1.18.2",
+    "express": "^4.10.8",
+    "livereload": "^0.9.3",
+    "method-override": "^2.3.10",
+    "mongoose": "4.10.8",
+    "morgan": "^1.9.0"
+  }
+}
