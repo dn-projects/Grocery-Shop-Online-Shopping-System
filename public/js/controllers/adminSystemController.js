@@ -1,4 +1,4 @@
-var app = angular.module('adminSystem', ['ngRoute']);
+var app = angular.module('adminSystem', ['ngRoute', 'ui.bootstrap']);
 
     app.config(function($routeProvider)
     {
@@ -10,7 +10,7 @@ var app = angular.module('adminSystem', ['ngRoute']);
             })
             .when('/stock', {
                 templateUrl : 'adminStock.html',
-                //controller : 'FirstController'
+                controller : 'adminStockController'
             })
             .when('/orders', {
                 templateUrl : 'adminOrders.html',
@@ -20,7 +20,6 @@ var app = angular.module('adminSystem', ['ngRoute']);
                 templateUrl : '/adminCustomers.html',
                 //controller : 'FirstController'
             })
-
 
             .otherwise({redirectTo: '/'});
     });

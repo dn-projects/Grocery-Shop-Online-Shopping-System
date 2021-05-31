@@ -28,40 +28,80 @@
             background-size: 475px;
             height: 100%;
         }
+        .modal {
+            text-align: center;
+            padding: 0!important;
+        }
+        .modal:before {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+            margin-right: -4px;
+        }
+        .modal-dialog {
+            display: inline-block;
+            text-align: left;
+            vertical-align: middle;
+            width: 20%;
+        }
     </style>
 
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.6.0.js"></script>
     <script src="js/controllers/adminSystemController.js"></script>
+    <script src="js/controllers/adminStockController.js"></script>
 
 </head>
 
-<body ng-controller="">
+<body ng-controller="adminStockController">
 
-        <div class="row bg-dark">
+<script type="text/ng-template" id="myModalContent.html">
+    <!--------------------------------- Modal header --------------------------------->
+    <div class="modal-header text-center">
+        <h3 class="modal-title w-100">Enter stock details</h3>
+    </div>
+    <!--------------------------------- Modal body --------------------------------->
+    <div class="modal-body">
+        <ul>
+            <li ng-repeat="item in items">
+                <a href="#" ng-click="$event.preventDefault(); selected.item = item">{{ item }}</a>
+            </li>
+        </ul>
+        Selected: <b>{{ selected.item }}</b>
+    </div>
+    <!--------------------------------- Modal footer --------------------------------->
+    <div class="modal-footer">
+        <button class="btn btn-warning" style="border-color: #032e42; background-color: #032e42; color: white" type="button" ng-click="cancel()">Cancel</button>
+        <button class="btn btn-primary" style="border-color: #032e42; background-color: #032e42; color: white" type="button" ng-click="ok()">Add new stock</button>
+    </div>
+
+</script>
+
+<!--        <div class="row bg-secondary">-->
+        <div class="row" style="background-color: #9cacbf">
             <div class="col d-flex justify-content-start">
-                <button type="submit" class="btn btn-info m-2" ng-Click="">Add new stock</button>
+                <button type="submit" style="border-color: #032e42; background-color: #032e42"
+                        class="btn btn-primary m-2" ng-click="addNewStock()">Add new stock</button>
             </div>
             <div class="col d-flex justify-content-end">
-                <button type="submit" class="btn btn-primary m-2" ng-Click="">Search</button>
-                <button type="submit" class="btn btn-primary m-2" ng-Click="">Filter</button>
-                <button type="submit" class="btn btn-primary m-2" ng-Click="">Sort</button>
+                <button type="submit" style="border-color: #032e42; background-color: #032e42" class="btn btn-primary m-2" ng-Click="">Search</button>
+                <button type="submit" style="border-color: #032e42; background-color: #032e42" class="btn btn-primary m-2" ng-Click="">Filter</button>
+                <button type="submit" style="border-color: #032e42; background-color: #032e42" class="btn btn-primary m-2" ng-Click="">Sort</button>
             </div>
         </div>
 
         <div class="row">
-
-
-
+            <div ng-show="selected">Selection from a modal: {{ selected }}</div>
         </div>
 
 
-
         <!-- TODO LIST -->
-        <div id="todo-list" class="row">
+<!--        <div id="todo-list" class="row">
             <div class="col-sm-4 col-sm-offset-4">
 
-                <!-- LOOP OVER THE TODOS IN $scope.todos ---------------------------------------------->
+                &lt;!&ndash; LOOP OVER THE TODOS IN $scope.todos &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;
                 <div class="checkbox" ng-repeat="todo in todos">
                     <label>
                         <input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
@@ -73,19 +113,6 @@
                 </p>
 
             </div>
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+        </div>-->
 </body>
 </html>

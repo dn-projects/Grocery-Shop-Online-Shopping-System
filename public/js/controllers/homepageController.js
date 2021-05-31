@@ -1,5 +1,5 @@
 //angular.module('homepage',['homepageController', 'itemService']);
-var app = angular.module('homepage', ['ngRoute','itemService'])
+var app = angular.module('homepage', ['ngRoute','itemService', 'ui.bootstrap'])
 
 	app.config(function($routeProvider)
 	{
@@ -26,7 +26,7 @@ var app = angular.module('homepage', ['ngRoute','itemService'])
 			//.otherwise({redirectTo: '/'});
 	});
 
-	app.controller('homepageController', ['$window','$location','$scope','$http','Items', function($window, $location, $scope, $http, Items) {
+	app.controller('homepageController', ['$modal','$window','$location','$scope','$http','Items', function($modal,$window, $location, $scope, $http, Items) {
 		$scope.formData = {};
 		$scope.loading = true;
 
@@ -41,28 +41,29 @@ var app = angular.module('homepage', ['ngRoute','itemService'])
 			$window.location = 'basket.html';
 		}
 
-		$scope.createItem = function() {
 
-			if ($scope.formData.text != undefined) {
-				$scope.loading = true;
-
-				Items.create($scope.formData)
-
-					.success(function(data) {
-						$scope.loading = false;
-						$scope.formData = {};
-						$scope.items = data;
-					});
-			}
-		};
-
-		$scope.deleteItem = function(id) {
-			$scope.loading = true;
-
-			Items.delete(id)
-				.success(function(data) {
-					$scope.loading = false;
-					$scope.items = data;
-				});
-		};
-	}]);
+	// 	$scope.createItem = function() {
+	//
+	// 		if ($scope.formData.text != undefined) {
+	// 			$scope.loading = true;
+	//
+	// 			Items.create($scope.formData)
+	//
+	// 				.success(function(data) {
+	// 					$scope.loading = false;
+	// 					$scope.formData = {};
+	// 					$scope.items = data;
+	// 				});
+	// 		}
+	// 	};
+	//
+	// 	$scope.deleteItem = function(id) {
+	// 		$scope.loading = true;
+	//
+	// 		Items.delete(id)
+	// 			.success(function(data) {
+	// 				$scope.loading = false;
+	// 				$scope.items = data;
+	// 			});
+	// 	};
+	// }]);
