@@ -1,1 +1,1 @@
-module.exports = {localUrl: 'mongodb://localhost:27017/items'};
+module.exports = {localUrl: 'mongodb://localhost:27017/stockList'};

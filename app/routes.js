@@ -28,10 +28,10 @@ module.exports = function (app)
         Stock.create
         (
             {
-                text: request.body.text
-                // text2: request.body.text
-                // text3: request.body.text
-                // text4: request.body.text
+                stockName: request.body.name.text,
+                stockPrice: request.body.price.text,
+                stockPicture: request.body.picture.text,
+                stockDescription: request.body.description.text,
             },
             function (error, stock)
             {
@@ -42,7 +42,6 @@ module.exports = function (app)
                 getStock(response);
             }
         );
-
     });
 
     // delete a item

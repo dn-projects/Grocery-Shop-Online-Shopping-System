@@ -76,7 +76,7 @@
                 <div class="row mb-4">
                     <form>
                         <label class="mb-1">Price of stock</label>
-                        <input type="number" ng-model="stockPrice.number" />
+                        <input type="text" ng-model="stockPrice.text" />
                     </form>
                 </div>
                 <div class="row mb-4">
@@ -105,11 +105,6 @@
                 </div>
             </div>
         </div>
-<!--        <div class="d-flex justify-content-center">-->
-<!--            <div type="danger" collapse="isCollapsed" class="alert">-->
-<!--                {{ alert.message }}-->
-<!--            </div>-->
-<!--        </div>-->
     </div>
 
 </script>
@@ -126,15 +121,51 @@
         </div>
 
     <div class="d-flex justify-content-center">
-        <div id="stock-list"class="row w-75 bg-light justify-content-center">
-            <div ng-repeat="stock in stockList" class="w-100 m-1">
-                <div class="col border border-dark">
-                    <label>
-                        {{ stock.text }}
-                    </label>
-                </div>
-            </div>
-        </div>
+        <table border=1 class="bg-light w-100 m-1">
+            <thead>
+            <tr>
+                <th>Name of stock</th>
+                <th>Price of stock</th>
+                <th>Stock Picture</th>
+                <th>Stock description</th>
+            </tr>
+            </thead>
+            <tr ng-repeat="stock in stockList">
+                <td> {{ stock.stockName }} </td>
+                <td> {{ stock.stockPrice }} </td>
+                <td> {{ stock.stockPicture }} </td>
+                <td> {{ stock.stockDescription }} </td>
+            </tr>
+        </table>
+
+
+
+
+<!--        <div id="stock-list"class="row w-75 bg-light justify-content-center">-->
+<!--            <div ng-repeat="stock in stockList" class="w-100 m-1">-->
+<!--                <div class="col w-25 border border-dark">-->
+<!--                    <label>-->
+<!--                        {{ stock.stockName }}-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--                <div class="col w-25 border border-dark">-->
+<!--                    <label>-->
+<!--                        {{ stock.stockPrice }}-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--                <div class="col w-25 border border-dark">-->
+<!--                    <label>-->
+<!--                        {{ stock.stockPicture }}-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--                <div class="col w-25 border border-dark">-->
+<!--                    <label>-->
+<!--                        {{ stock.stockDescription }}-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
     </div>
 
 </body>

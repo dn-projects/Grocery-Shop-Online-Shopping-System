@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/stock.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/stock.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/adminStock.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/adminStock.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/controllers/adminStockController.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/controllers/adminStockController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/services/stockService.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/services/stockService.js" afterDir="false" />
@@ -111,7 +112,8 @@
       <workItem from="1622252798490" duration="7465000" />
       <workItem from="1622335666763" duration="6731000" />
       <workItem from="1622368366318" duration="35701000" />
-      <workItem from="1622491568960" duration="26092000" />
+      <workItem from="1622491568960" duration="26121000" />
+      <workItem from="1622567834676" duration="9660000" />
     </task>
     <task id="LOCAL-00001" summary="push">
       <created>1622253077748</created>
@@ -141,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622513052539</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="push">
+      <created>1622524750176</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1622524750176</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

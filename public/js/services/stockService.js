@@ -7,13 +7,11 @@ var app = angular.module('stockServiceModule', []);
 			{
 				return $http.get('/api/stock');
 			},
-			create : function(stockName)
-			//create : function(stockName, stockPrice, stockPicture, stockDescription)
+			create : function(stockObject)
 			{
-				return $http.post('/api/stock', stockName);
-				//return $http.post('/api/stock', stockName, stockPrice, stockPicture, stockDescription);
+				return $http.post('/api/stock', stockObject);
 			},
-			delete : function(id)
+			demlete : function(id)
 			{
 				return $http.delete('/api/stock' + id);
 			}

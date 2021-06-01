@@ -20,11 +20,10 @@
                 windowClass: 'show',
                 backdrop: false
             });
-
-            modalInstance.result.then(function(selectedItem)
-            {
-                $scope.selected = selectedItem;
-            });
+            // modalInstance.result.then(function(selectedItem)
+            // {
+            //     $scope.selected = selectedItem;
+            // });
         }
     }]);
 
@@ -32,18 +31,10 @@
     {
         $scope.ok = function ()
         {
-            if ($scope.stockName.text == undefined)
-            {
-                //$scope.message = "Please fill all fields!";
-                //$scope.isCollapsed = 0;
-            }
-            else
-            {
-                StockService.create($scope.stockName);
-                //StockService.create($scope.stockName, $scope.stockPrice, $scope.stockPicture, $scope.stockDescription);
-                $modalInstance.close();
-                $route.reload();
-            }
+            var object = {name:$scope.stockName, price:$scope.stockPrice, picture:$scope.stockPicture, description:$scope.stockDescription};
+            StockService.create(object);
+            $modalInstance.close();
+            $route.reload();
         };
 
         $scope.cancel = function ()
