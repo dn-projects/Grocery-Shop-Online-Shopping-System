@@ -1,14 +1,14 @@
-var Item = require('./models/item');
+var Stock = require('./models/stock');
 
-function getItems(response)
+function getStock(response)
 {
-    Item.find(function (error, items)
+    Stock.find(function (error, stock)
     {
         if (error)
         {
             response.send(error);
         }
-        response.json(items);
+        response.json(stock);
     });
 };
 
@@ -16,35 +16,37 @@ function getItems(response)
 
 module.exports = function (app)
 {
-    app.get('/api/items', function (request, response)
+    app.get('/api/stock', function (request, response)
     {
-        getItems(response);
+        getStock(response);
     });
 
     // create item and send back all items after creation
-    app.post('/api/items', function (request, response)
+    app.post('/api/stock', function (request, response)
     {
         // create a item, information comes from AJAX request from Angular
-        Item.create
+        Stock.create
         (
             {
-                text: request.body.text, done: false
+                //console.log("checkpoint 4");
+                text: request.body.text
             },
-            function (error, item)
+            function (error, stock)
             {
                 if (error)
+                {
                     response.send(error);
+                }
 
-                // get and return all the items after you create another
-                getItems(response);
+                getStock(response);
             }
         );
 
     });
 
     // delete a item
-    app.delete('/api/items/:item_id', function (request, response) {
-        Item.remove({
+    app.delete('/api/stock', function (request, response) {
+        Stock.remove({
             _id: request.params.item_id
         }, function (error, item) {
             if (error)
@@ -56,7 +58,7 @@ module.exports = function (app)
 
     // application -------------------------------------------------------------
     app.get('*', function (request, response) {
-        response.sendFile(__dirname + '/public/index.html');
+        response.sendFile(__dirname + '/public/adminSystem.html');
         // load the single view file (angular will handle the page changes on the front-end)
     });
 };

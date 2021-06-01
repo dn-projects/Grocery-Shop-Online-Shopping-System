@@ -1,4 +1,13 @@
-var app = angular.module('adminSystem', ['ngRoute', 'ui.bootstrap']);
+var app = angular.module('adminSystem', ['ngRoute', 'ui.bootstrap', 'stockServiceModule']);
+
+    app.controller('adminSystemController', ['$http','$window','$location','$scope','StockService', function($http,$window, $location,$scope, StockService)
+    {
+        $scope.signOut = function()
+        {
+            $window.location = 'admin.html'
+        }
+    }]);
+
 
     app.config(function($routeProvider)
     {
@@ -10,7 +19,7 @@ var app = angular.module('adminSystem', ['ngRoute', 'ui.bootstrap']);
             })
             .when('/stock', {
                 templateUrl : 'adminStock.html',
-                controller : 'adminStockController'
+                controller : 'adminStockController',
             })
             .when('/orders', {
                 templateUrl : 'adminOrders.html',
@@ -23,11 +32,3 @@ var app = angular.module('adminSystem', ['ngRoute', 'ui.bootstrap']);
 
             .otherwise({redirectTo: '/'});
     });
-
-    app.controller('adminSystemController', ['$window','$location','$scope', function($window, $location,$scope)
-    {
-        $scope.signOut = function()
-        {
-            $window.location = 'admin.html'
-        }
-    }]);

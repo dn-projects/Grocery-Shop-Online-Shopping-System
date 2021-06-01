@@ -1,5 +1,5 @@
 //angular.module('homepage',['homepageController', 'itemService']);
-var app = angular.module('homepage', ['ngRoute','itemService', 'ui.bootstrap'])
+var app = angular.module('homepage', ['ngRoute','itemService', 'ui.bootstrap','stockService'])
 
 	app.config(function($routeProvider)
 	{

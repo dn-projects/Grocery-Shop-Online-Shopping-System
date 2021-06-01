@@ -1,38 +1,13 @@
-//angular.module('homepage',['homepageController', 'itemService']);
-//var app = angular.module('adminStock', ['ui.bootstrap','itemService'])
 
-    // app.config(function($routeProvider)
-    // {
-    //     $routeProvider
-    //
-    //     .when('/', {
-    //     	templateUrl : '',
-    //     	//controller : 'FirstController'
-    //     })
-    //     .when('/basket', {
-    //     	templateUrl : 'basket.html',
-    //     	//controller : 'FirstController'
-    //     })
-    //     .when('/orders', {
-    //     	templateUrl : 'adminOrders.html',
-    //     	//controller : 'FirstController'
-    //     })
-    //     .when('/customers', {
-    //     	templateUrl : '/adminCustomers.html',
-    //     	//controller : 'FirstController'
-    //     })
-    //
-    //
-    //     .otherwise({redirectTo: '/'});
-    // });
-
-    app.controller('adminStockController', ['$modal','$window','$location','$scope',
-        function($modal, $window, $location, $scope)
+    app.controller('adminStockController', ['$modal','$window','$location','$scope','StockService',
+        function($modal, $window, $location, $scope, StockService)
     {
-        // $scope.formData = {};
-        // $scope.loading = true;
+        $scope.stockName = {};
 
-        $scope.items = ['item1', 'item2', 'item3'];
+        StockService.get()
+            .success(function(stocks){
+                $scope.stockList = stocks;
+            })
 
         $scope.addNewStock = function()
         {
@@ -40,15 +15,10 @@
                 templateUrl: 'myModalContent.html',
                 controller: 'ModalInstanceCtrl',
                 windowClass: 'show',
-                resolve: {
-                    items: function () {
-                        return $scope.items;
-                    }
-                }
-
+                backdrop: false,
+                })
             });
 
-            console.log(modalInstance);
             modalInstance.result.then(function(selectedItem)
             {
                 $scope.selected = selectedItem;
@@ -56,18 +26,54 @@
         }
     }]);
 
-    app.controller('ModalInstanceCtrl', function ($scope, $modalInstance, items) {
-
-        $scope.items = items;
-        $scope.selected = {
-            item: $scope.items[0]
+    app.controller('ModalInstanceCtrl', function ($http,$scope, $modalInstance, items, StockService)
+    {
         };
 
-        $scope.ok = function () {
-            $modalInstance.close($scope.selected.item);
+
+        // // Example starter JavaScript for disabling form submissions if there are invalid fields
+        // (function () {
+        //     'use strict'
+        //
+        //     // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        //     var forms = document.querySelectorAll('.needs-validation')
+        //
+        //     // Loop over them and prevent submission
+        //     Array.prototype.slice.call(forms)
+        //         .forEach(function (form) {
+        //             form.addEventListener('submit', function (event) {
+        //                 if (!form.checkValidity()) {
+        //                     event.preventDefault()
+        //                     event.stopPropagation()
+        //                 }
+        //
+        //                 form.classList.add('was-validated')
+        //             }, false)
+        //         })
+        // })()
+
+
+
+        $scope.ok = function ()
+        {
+            console.log("checkpoint 1");
+            if ($scope.stockName == undefined)
+            {
+
+                // TODO VALIDATION HANDLING HERE
+
+            }
+            else
+            {
+                console.log("checkpoint 2");
+                StockService.create($scope.stockName);
+
+                $modalInstance.close();
+            }
         };
 
-        $scope.cancel = function () {
+        $scope.cancel = function ()
+        {
             $modalInstance.dismiss('cancel');
         };
     });

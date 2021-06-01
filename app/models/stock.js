@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-module.exports = mongoose.model('Item',
+module.exports = mongoose.model('Stock',
     {
         text:
         {
