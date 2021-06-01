@@ -69,28 +69,27 @@
             <div class="modal-body">
                 <div class="row mb-4">
                     <form>
-                        <div class="form-group">
-                            <label class="mb-1">Name of stock</label>
-                            <input type="text" ng-model="stockName" />
-<!--                        <label for="validationCustom03" class="form-label">Name of stock</label>
-                        <input type="text" class="form-control" id="validationCustom03" required>
-                        <div class="invalid-feedback">
-                            Please provide a valid city.
-                        </div>-->
-                        </div>
+                        <label class="mb-1">Name of stock</label>
+                        <input type="text" ng-model="stockName.text" />
                     </form>
                 </div>
                 <div class="row mb-4">
-                    <label class="mb-1">Price of stock</label>
-                    <input type="email" ng-model="user.email" />
+                    <form>
+                        <label class="mb-1">Price of stock</label>
+                        <input type="number" ng-model="stockPrice.number" />
+                    </form>
                 </div>
                 <div class="row mb-4">
-                    <label class="mb-1">Picture of stock</label>
-                    <input type="email" ng-model="user.email" />
+                    <form>
+                        <label class="mb-1">Picture of stock</label>
+                        <input type="text" ng-model="stockPicture.text" />
+                    </form>
                 </div>
                 <div class="row mb-4">
-                    <label class="mb-1">Description of stock</label>
-                    <input type="email" ng-model="user.email" />
+                    <form>
+                        <label class="mb-1">Description of stock</label>
+                        <input type="text" ng-model="stockDescription.text" />
+                    </form>
                 </div>
             </div>
     </div>
@@ -106,10 +105,14 @@
                 </div>
             </div>
         </div>
+<!--        <div class="d-flex justify-content-center">-->
+<!--            <div type="danger" collapse="isCollapsed" class="alert">-->
+<!--                {{ alert.message }}-->
+<!--            </div>-->
+<!--        </div>-->
     </div>
 
 </script>
-<!--        <div class="row bg-secondary">-->
         <div class="row" style="background-color: #9cacbf">
             <div class="col d-flex justify-content-start">
                 <button type="submit" style="border-color: #032e42; background-color: #032e42"
@@ -122,20 +125,17 @@
             </div>
         </div>
 
-        <div id="stock-list" class="row">
-            <div class="col-sm-4 col-sm-offset-4">
-
-                <div ng-repeat="stock in stockList">
+    <div class="d-flex justify-content-center">
+        <div id="stock-list"class="row w-75 bg-light justify-content-center">
+            <div ng-repeat="stock in stockList" class="w-100 m-1">
+                <div class="col border border-dark">
                     <label>
-                        {{ stock }}
+                        {{ stock.text }}
                     </label>
                 </div>
-
-                <p class="text-center" ng-show="loading">
-                    <span class="fa fa-spinner fa-spin fa-3x"></span>
-                </p>
             </div>
         </div>
+    </div>
 
 </body>
 </html>

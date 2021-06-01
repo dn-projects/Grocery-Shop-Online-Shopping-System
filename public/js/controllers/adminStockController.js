@@ -3,6 +3,9 @@
         function($modal, $window, $location, $scope, StockService)
     {
         $scope.stockName = {};
+        $scope.stockPrice = {};
+        $scope.stockPicture = {};
+        $scope.stockDescription = {};
 
         StockService.get()
             .success(function(stocks){
@@ -15,8 +18,7 @@
                 templateUrl: 'myModalContent.html',
                 controller: 'ModalInstanceCtrl',
                 windowClass: 'show',
-                backdrop: false,
-                })
+                backdrop: false
             });
 
             modalInstance.result.then(function(selectedItem)
@@ -26,49 +28,21 @@
         }
     }]);
 
-    app.controller('ModalInstanceCtrl', function ($http,$scope, $modalInstance, items, StockService)
+    app.controller('ModalInstanceCtrl', function ($route,$http,$scope, $modalInstance, StockService)
     {
-        };
-
-
-        // // Example starter JavaScript for disabling form submissions if there are invalid fields
-        // (function () {
-        //     'use strict'
-        //
-        //     // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        //     var forms = document.querySelectorAll('.needs-validation')
-        //
-        //     // Loop over them and prevent submission
-        //     Array.prototype.slice.call(forms)
-        //         .forEach(function (form) {
-        //             form.addEventListener('submit', function (event) {
-        //                 if (!form.checkValidity()) {
-        //                     event.preventDefault()
-        //                     event.stopPropagation()
-        //                 }
-        //
-        //                 form.classList.add('was-validated')
-        //             }, false)
-        //         })
-        // })()
-
-
-
         $scope.ok = function ()
         {
-            console.log("checkpoint 1");
-            if ($scope.stockName == undefined)
+            if ($scope.stockName.text == undefined)
             {
-
-                // TODO VALIDATION HANDLING HERE
-
+                //$scope.message = "Please fill all fields!";
+                //$scope.isCollapsed = 0;
             }
             else
             {
-                console.log("checkpoint 2");
                 StockService.create($scope.stockName);
-
+                //StockService.create($scope.stockName, $scope.stockPrice, $scope.stockPicture, $scope.stockDescription);
                 $modalInstance.close();
+                $route.reload();
             }
         };
 
@@ -77,35 +51,3 @@
             $modalInstance.dismiss('cancel');
         };
     });
-
-        // Items.get()
-        //     .success(function(data) {
-        //         $scope.items = data;
-        //         $scope.loading = false;
-        //     });
-        //
-        //
-        // $scope.addNewStock = function() {
-        //
-        //     if ($scope.formData.text != undefined) {
-        //         $scope.loading = true;
-        //
-        //         Items.create($scope.formData)
-        //
-        //             .success(function(data) {
-        //                 $scope.loading = false;
-        //                 $scope.formData = {};
-        //                 $scope.items = data;
-        //             });
-        //     }
-        // };
-        //
-        // $scope.deleteItem = function(id) {
-        //     $scope.loading = true;
-        //
-        //     Items.delete(id)
-        //         .success(function(data) {
-        //             $scope.loading = false;
-        //             $scope.items = data;
-        //         });
-        // };

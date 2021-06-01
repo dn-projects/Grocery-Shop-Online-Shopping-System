@@ -28,8 +28,10 @@ module.exports = function (app)
         Stock.create
         (
             {
-                //console.log("checkpoint 4");
                 text: request.body.text
+                // text2: request.body.text
+                // text3: request.body.text
+                // text4: request.body.text
             },
             function (error, stock)
             {
@@ -37,7 +39,6 @@ module.exports = function (app)
                 {
                     response.send(error);
                 }
-
                 getStock(response);
             }
         );
@@ -58,7 +59,7 @@ module.exports = function (app)
 
     // application -------------------------------------------------------------
     app.get('*', function (request, response) {
-        response.sendFile(__dirname + '/public/adminSystem.html');
+        response.sendFile(__dirname + 'adminSystem.html#/stock');
         // load the single view file (angular will handle the page changes on the front-end)
     });
 };

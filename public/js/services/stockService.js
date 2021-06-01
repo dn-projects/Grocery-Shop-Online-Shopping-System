@@ -8,9 +8,10 @@ var app = angular.module('stockServiceModule', []);
 				return $http.get('/api/stock');
 			},
 			create : function(stockName)
+			//create : function(stockName, stockPrice, stockPicture, stockDescription)
 			{
-				console.log("checkpoint 3");
-				return $http.post('/api/stock', {stockName});
+				return $http.post('/api/stock', stockName);
+				//return $http.post('/api/stock', stockName, stockPrice, stockPicture, stockDescription);
 			},
 			delete : function(id)
 			{
