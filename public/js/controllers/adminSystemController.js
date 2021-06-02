@@ -15,7 +15,6 @@ var app = angular.module('adminSystem', ['ngRoute', 'ui.bootstrap', 'stockServic
 
             .when('/', {
                 templateUrl : 'adminDashboard.html',
-                //controller : 'FirstController'
             })
             .when('/stock', {
                 templateUrl : 'adminStock.html',
@@ -23,11 +22,9 @@ var app = angular.module('adminSystem', ['ngRoute', 'ui.bootstrap', 'stockServic
             })
             .when('/orders', {
                 templateUrl : 'adminOrders.html',
-                //controller : 'FirstController'
             })
             .when('/customers', {
                 templateUrl : '/adminCustomers.html',
-                //controller : 'FirstController'
             })
 
             .otherwise({redirectTo: '/'});

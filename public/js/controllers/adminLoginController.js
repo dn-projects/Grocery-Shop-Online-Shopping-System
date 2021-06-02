@@ -8,7 +8,13 @@ var app = angular.module('adminLogin', []);
         console.log($scope.username);
         console.log($scope.password);
 
-        $window.location = 'adminSystem.html';
+        if ($scope.username == 'admin' && $scope.password == 'admin')
+        {
+            $window.location = 'adminSystem.html';
+        }
+        else
+        {
+            $(".alert").show()
+        }
     }
-
     }]);

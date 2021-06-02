@@ -1,6 +1,6 @@
 
-    app.controller('adminStockController', ['$modal','$window','$location','$scope','StockService',
-        function($modal, $window, $location, $scope, StockService)
+    app.controller('adminStockController', ['$route','$modal','$window','$location','$scope','StockService',
+        function($route,$modal, $window, $location, $scope, StockService)
     {
         $scope.stockName = {};
         $scope.stockPrice = {};
@@ -12,6 +12,11 @@
                 $scope.stockList = stocks;
             })
 
+        $scope.deleteStock = function(stockId){
+            StockService.delete(stockId);
+            $route.reload();
+        }
+
         $scope.addNewStock = function()
         {
             var modalInstance = $modal.open({
@@ -20,10 +25,6 @@
                 windowClass: 'show',
                 backdrop: false
             });
-            // modalInstance.result.then(function(selectedItem)
-            // {
-            //     $scope.selected = selectedItem;
-            // });
         }
     }]);
 
@@ -33,8 +34,9 @@
         {
             var object = {name:$scope.stockName, price:$scope.stockPrice, picture:$scope.stockPicture, description:$scope.stockDescription};
             StockService.create(object);
-            $modalInstance.close();
             $route.reload();
+            $modalInstance.close();
+
         };
 
         $scope.cancel = function ()

@@ -30,6 +30,7 @@
         }
     </style>
 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
     <script src="js/controllers/adminLoginController.js"></script>
 
@@ -66,6 +67,12 @@
                         <button type="submit" style="border-color: #032e42; background-color: #032e42" class="w-25 btn btn-primary" ng-Click="attemptLogin()">Login</button>
                     </div>
 
+                    <!-- Alert -->
+                    <div class="row p-3 d-flex justify-content-center">
+                        <div class="alert alert-danger p-3 mb-3 text-center" style="display:none;" role="alert" id="invalidLogin">
+                            Enter correct credentials
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

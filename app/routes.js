@@ -21,10 +21,8 @@ module.exports = function (app)
         getStock(response);
     });
 
-    // create item and send back all items after creation
     app.post('/api/stock', function (request, response)
     {
-        // create a item, information comes from AJAX request from Angular
         Stock.create
         (
             {
@@ -44,16 +42,16 @@ module.exports = function (app)
         );
     });
 
-    // delete a item
-    app.delete('/api/stock', function (request, response) {
+    app.delete('/api/stock/:stock_id', function (request, response) {
         Stock.remove({
-            _id: request.params.item_id
+            _id: request.params.stock_id
         }, function (error, item) {
             if (error)
                 response.send(error);
 
-            getItems(response);
+            getStock(response);
         });
+        console.log('ID:',request);
     });
 
     // application -------------------------------------------------------------

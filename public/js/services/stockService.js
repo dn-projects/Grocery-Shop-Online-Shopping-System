@@ -11,9 +11,9 @@ var app = angular.module('stockServiceModule', []);
 			{
 				return $http.post('/api/stock', stockObject);
 			},
-			demlete : function(id)
+			delete : function(stockId)
 			{
-				return $http.delete('/api/stock' + id);
+				return $http.delete('/api/stock/' + stockId);
 			}
 		}
 	}]);
