@@ -3,15 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="09139cd2-6095-4f93-8aa3-e69fe7e00de1" name="Default Changelist" comment="push">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/adminStock.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/adminStock.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/controllers/adminLoginController.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/controllers/adminLoginController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/controllers/adminStockController.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/controllers/adminStockController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/controllers/adminSystemController.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/controllers/adminSystemController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/controllers/homepageController.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/controllers/homepageController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/services/stockService.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/services/stockService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +50,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -116,7 +109,10 @@
       <workItem from="1622335666763" duration="6731000" />
       <workItem from="1622368366318" duration="35701000" />
       <workItem from="1622491568960" duration="26121000" />
-      <workItem from="1622567834676" duration="23079000" />
+      <workItem from="1622567834676" duration="23098000" />
+      <workItem from="1622624732650" duration="4000" />
+      <workItem from="1622636245815" duration="1054000" />
+      <workItem from="1622687859390" duration="5116000" />
     </task>
     <task id="LOCAL-00001" summary="push">
       <created>1622253077748</created>
@@ -160,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622579464122</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="push">
+      <created>1622617678651</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1622617678651</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
